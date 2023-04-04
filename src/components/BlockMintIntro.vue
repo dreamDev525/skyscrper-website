@@ -264,5 +264,12 @@ export default {
       }
     }
   }
+
+  .slider-arrow {
+    left, right {
+      width: 55px;
+      height: 55px;
+    }
+  }
 }
 </style>
