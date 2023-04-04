@@ -40,7 +40,7 @@
               aria-expanded="false"
             >
               <h1>{{ faq.title }}</h1>
-              <img src="@/assets/icons/arrow-down.svg" style="width: 30px; height: 30px" alt="" />
+              <img src="@/assets/icons/arrow-down.svg" style="width: 28px; height: 28px" alt="" />
             </div>
             <div class="collapse home-faq-item-text" :id="'collapse1' + col">
               <h2 v-html="faq.text" />
@@ -152,7 +152,7 @@ export default {
   }
 
   &-item {
-    border-bottom: 2px solid white;
+    border-bottom: 1px solid white;
     margin-bottom: 30px;
 
     &-title {
@@ -190,7 +190,6 @@ export default {
     &-text {
       & > h2 {
         padding-bottom: 20px;
-
         font-family: Helvetica;
         font-size: 14px;
         text-align: left;

@@ -61,7 +61,7 @@ export default {
   font-family: "acumin-pro-condensed";
   font-style: italic;
   color: #fff;
-  padding: 3px 40px 10px 40px;
+  padding: 12px 40px;
   position: relative;
   line-height: 130%;
   z-index: 100;

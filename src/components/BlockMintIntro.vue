@@ -140,6 +140,8 @@ export default {
 
 .wrapper-home-intro__seen {
   margin-top: 60px !important;
+  max-width: 1200px !important;
+  padding: 0px 100px;
 }
 
 .home-intro {

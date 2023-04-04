@@ -1,7 +1,7 @@
 <template>
   <!-- FAQ -->
   <div class="home-faq" id="faq">
-    <div class="wrapper">
+    <div class="wrapper wrapper-faq">
       <h1 class="title home-faq-title title-headings">FAQS ON THE LAND DEED SALE</h1>
       <div class="home-faq__items">
         <div class="home-faq-block left">
@@ -18,7 +18,7 @@
               aria-expanded="false"
             >
               <h5>{{ faq.title }}</h5>
-              <img src="@/assets/icons/arrow-down.svg" alt="" />
+              <img src="@/assets/icons/arrow-down.svg" style="width: 28px; height: 28px" alt="" />
             </div>
             <div class="collapse home-faq-item-text" :id="'collapse' + col">
               <div>
@@ -42,7 +42,7 @@
               aria-expanded="false"
             >
               <h5>{{ faq.title }}</h5>
-              <img src="@/assets/icons/arrow-down.svg" alt="" />
+              <img src="@/assets/icons/arrow-down.svg" style="width: 28px; height: 28px" alt="" />
             </div>
             <div class="collapse home-faq-item-text" :id="'collapse1' + col">
               <div>
@@ -130,17 +130,22 @@ export default {
 </script>
 
 <style lang="scss">
+.wrapper-faq {
+  max-width: 1280px !important;
+}
+
 .home-faq {
   background: #a18553;
   padding: 20px 20px 10px 20px;
 
   & .wrapper {
-    max-width: 1280px;
+    max-width: 1920px;
     margin: 0 auto;
   }
 
   &__items {
     display: flex;
+    padding: 0px 100px;
     @media (max-width: 800px) {
       display: flex;
       flex-direction: column;
@@ -162,7 +167,7 @@ export default {
 
       & > h5 {
         text-transform: uppercase;
-        font-size: calc(22px + 10 * ((100vw - 769px) / 2048));
+        font-size: 20px;
       }
 
       &[aria-expanded="true"] {
@@ -186,9 +191,9 @@ export default {
 
     &-text {
       font-family: Helvetica;
-      font-size: calc(16px + 10 * ((100vw - 769px) / 2048));
+      font-size: 14px;
       text-align: left;
-
+      line-height: 20px;
       & > div {
         padding-bottom: 20px;
       }
@@ -211,7 +216,6 @@ export default {
     }
     &.right {
       @media (min-width: 800px) {
-        border-left: 1px solid white;
         padding-left: 40px;
       }
     }

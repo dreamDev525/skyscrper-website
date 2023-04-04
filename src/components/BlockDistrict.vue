@@ -400,7 +400,6 @@ export default {
 
     &-item {
       width: 100%;
-      width: 300px;
       height: 300px;
 
       position: relative;
