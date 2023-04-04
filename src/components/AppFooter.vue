@@ -2,7 +2,7 @@
   <footer class="footer-wrapper">
     <div class="footer">
       <router-link to="/" class="footer-logo">
-        <img src="@/assets/logo.png" alt="" />
+        <img src="@/assets/logo-2.png" alt="" />
       </router-link>
       <!-- SOCIALS -->
       <div class="footer-socials">
