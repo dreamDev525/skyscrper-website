@@ -536,8 +536,13 @@ export default {
   & .logo-link {
     width: 120px;
     height: 130px;
-    top: -10px;
-    transform: translateX(-50%);
+    & img {
+      height: 130px;
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
     // position: static;
   }
 }

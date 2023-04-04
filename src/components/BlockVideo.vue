@@ -16,7 +16,7 @@
           <img v-else rel="preload" :src="videoOptions.mobileBg" alt="" />
         </div>
         <h2 class="home-video-banner__child">
-          <WowsBtn buttonType="link" :url="links.whitelist"
+          <WowsBtn class="whitelist-btn" buttonType="link" :url="links.whitelist"
             >JOIN WHITELIST</WowsBtn
           >
         </h2>
@@ -76,7 +76,8 @@ export default {
 
   &__parent {
     position: relative;
-    height: 650px;
+    // max-height: 700px;
+    height: 45vw;
 
     @media (max-width: 800px) {
       height: 80%;

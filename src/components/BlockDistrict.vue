@@ -400,7 +400,6 @@ export default {
 
     &-item {
       width: 100%;
-      height: 300px;
 
       position: relative;
       z-index: 5;
@@ -409,7 +408,6 @@ export default {
 
       img {
         width: 100%;
-        height: 100%;
 
         object-fit: contain;
       }

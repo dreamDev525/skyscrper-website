@@ -286,8 +286,6 @@ export default {
     &-item {
       .teams-avatar {
         width: 100%;
-        height: 300px;
-        max-width: 300px;
         position: relative;
         .logo {
           position: absolute;
@@ -304,17 +302,6 @@ export default {
           }
         }
       }
-      // z-index: 5;
-
-      // cursor: pointer;
-
-      // img {
-      //   width: 100%;
-      //   height: 100%;
-
-      //   object-fit: contain;
-      // }
-
     }
   }
 
@@ -331,7 +318,6 @@ export default {
         }
       }
     }
-
     &-item {
       width: 100%;
       margin-top: 72px;
@@ -365,7 +351,7 @@ export default {
       &-text {
         width: 40%;
 
-        /* margin-top: 5%; */
+        margin-top: 8%;
 
         @media screen and (max-width: 700px) {
           width: 100%;
@@ -384,7 +370,9 @@ export default {
       }
     }
   }
-
+  &__swiper {
+      transform: translateY(100px);
+  }
   &__btn {
     position: absolute;
     bottom: 10%;
@@ -401,8 +389,8 @@ export default {
     }
 
     @media screen and (min-width: 1800px) {
-      bottom: 10%;
-      right: 20%;
+      bottom: 15%;
+      right: 33%;
     }
 
     @media screen and (min-width: 2000px) {

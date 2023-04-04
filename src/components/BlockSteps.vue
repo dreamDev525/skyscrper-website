@@ -159,12 +159,8 @@ export default {
 
       &-image {
         img {
-          max-width: 170px;
-          max-height: 170px;  
-          @media (max-width: 1000px) {
-            max-width: 170px;
-            max-height: 170px;  
-          }
+          max-width: 190px;
+          max-height: 190px;
         }
     //   margin: 0 auto;
     //   width: 200px;
