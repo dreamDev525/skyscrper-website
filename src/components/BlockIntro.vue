@@ -294,10 +294,6 @@ export default {
         line-height: calc(22px + 10 * ((100vw - 370px) / 800));
         // margin-right: 5vw;
       }
-
-      @media (max-width: 800px) {
-        text-align: left;
-      }
     }
   }
   // &-title {

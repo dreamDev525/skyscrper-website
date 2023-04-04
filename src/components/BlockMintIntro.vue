@@ -142,6 +142,9 @@ export default {
   margin-top: 60px !important;
   max-width: 1200px !important;
   padding: 0px 100px;
+  @media screen and (max-width: 800px) {
+    padding: 0px 20px;
+  }
 }
 
 .home-intro {
@@ -259,10 +262,6 @@ export default {
         font-size: calc(25px + 5 * ((100vw - 370px) / 800));
         line-height: calc(22px + 10 * ((100vw - 370px) / 800));
         // margin-right: 5vw;
-      }
-
-      @media (max-width: 800px) {
-        text-align: left;
       }
     }
   }

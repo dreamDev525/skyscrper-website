@@ -26,6 +26,7 @@
             :slides-per-view="1.5"
             :centered-slides="true"
             :spaceBetween="30"
+            :pagination="{ clickable: true }"
             :breakpoints="{
               '600': {
                 slidesPerView: 2,

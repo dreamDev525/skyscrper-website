@@ -105,13 +105,16 @@ h5 {
 .slider-heading {
   /* font-size: calc(42px + (72 - 42) * ((100vw - 768px) / (1600 - 768))); */
   /* font-size: calc(55px + 50 * (100vw - 769px) / 2048) !important; */
-  font-size: calc(40px + 15 * ((100vw - 769px) / 2048)) !important;
+  font-size: calc(40px + 15 * ((100vw - 769px) / 2048));
   line-height: 130%;
 
   margin-bottom: 40px;
 
   @media (min-width: 1600px) {
     font-size: 64px;
+  }
+  @media (max-width: 800px) {
+    font-size: 32px;
   }
 }
 

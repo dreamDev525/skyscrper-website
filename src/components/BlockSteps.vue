@@ -155,6 +155,9 @@ export default {
       @media (max-width: 800px) {
         font-size: calc(35px + 2 * ((100vw - 370px) / 800));
       }
+      @media (max-width: 1150px) {
+        font-size: 30px;
+      }
     }
 
       &-image {

@@ -181,6 +181,15 @@ export default {
   font-family: "acumin-pro-condensed", sans-serif;
   font-weight: bold;
   text-align: start;
+
+  margin: 0 auto;
+
+  @media screen and (max-width: 1150px) {
+    font-size: 25px;
+  }
+  @media screen and (max-width: 650px) {
+    font-size: 22px;
+  }
 }
 
 .slider-district-text-area {
@@ -250,7 +259,7 @@ export default {
 
     button {
       width: auto;
-      padding: 7px 40px 7px 40px;
+      padding: 7px 30px 7px 30px;
     }
 
     &-wrapper {
@@ -376,26 +385,22 @@ export default {
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
-    
-    @media (max-width: 700px) {
-      padding: 0px 50px;
-    }
 
     &-item-district {
-      width: 50%;
+      width: 60%;
       padding-top: 50px;
 
       display: flex;
       justify-content: flex-start;
 
-      @media screen and (max-width: 1000px) {
+      @media screen and (max-width: 1350px) {
         width: 70%;
-        flex-direction: column;
-        gap: 0px;
+        padding: 50px 90px 0px 90px;
       }
 
-      @media screen and (max-width: 700px) {
+      @media screen and (max-width: 1000px) {
         width: 100%;
+        padding: 50px 20px 0px 20px;
       }
 
       &-character {
@@ -435,36 +440,17 @@ export default {
 
   &__btn-district {
     position: absolute;
-    bottom: 10%;
-    right: 22%;
+    bottom: 13%;
+    right: 20%;
 
-    // @media screen and (min-width: 1450px) {
-    //   right: 15%;
-    // }
-
-    // @media screen and (min-width: 1600px) {
-    //   right: 20%;
-    // }
-
-    // @media screen and (min-width: 1800px) {
-    //   right: 30%;
-    // }
-
+    margin-top: 10px;
     @media screen and (max-width: 1150px) {
       right: 17%;
     }
 
-    // @media screen and (max-width: 990px) {
-    //   right: 16%;
-    // }
-
     @media screen and (max-width: 1000px) {
-      position: absolute;
-      left: 0;
-      transform: translateX(9%);
-      bottom: 0px;
-      z-index: 1000;
-      /* margin-top: 70px; */
+      position: relative;
+      right: 0;
     }
 
     .wows-btn {
