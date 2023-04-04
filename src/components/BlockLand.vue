@@ -108,7 +108,7 @@ export default {
 
 <style lang="scss">
 .wrapper-land {
-  max-width: 1280px;
+  max-width: 1200px;
 }
 
 .home-land {

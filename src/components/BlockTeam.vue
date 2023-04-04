@@ -365,7 +365,9 @@ export default {
 
   &-person {
     &-name {
-      font-family: vincente;
+      font-family: acumin-pro-condensed;
+      font-style: italic;
+      font-weight: bold;
       text-transform: uppercase;
       color: rgba(255,255,255,0.8);
       font-size: calc(18px + 10 * ((100vw - 769px) / 2048));

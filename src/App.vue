@@ -110,11 +110,8 @@ h5 {
 
   margin-bottom: 40px;
 
-  @media (min-width: 1600px) {
-    font-size: 64px;
-  }
   @media (max-width: 800px) {
-    font-size: 32px;
+    font-size: 35px;
   }
 }
 

@@ -122,7 +122,7 @@ export default {
 
     display: flex;
     justify-content: flex-end;
-
+    font-size: 1rem;
     margin: 0;
 
     @media screen and (max-width: 1000px) {

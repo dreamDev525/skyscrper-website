@@ -278,7 +278,7 @@ export default {
 
     button {
       width: auto;
-      padding: 7px 30px 7px 30px;
+      padding: 10px 30px 10px 30px;
     }
 
     &-wrapper {
