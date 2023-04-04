@@ -26,7 +26,8 @@
           :key="slideIndex"
           @click="onClickSlider(slideIndex)"
         >
-          <img :src="slide.logo" alt="" />
+          <img class="img-glow" :src="slide.glow" alt="" />
+          <img class="img-logo" :src="slide.logo" alt="" />
         </div>
       </div>
       <div class="home-fraction__slider">
@@ -65,17 +66,20 @@ import { mapGetters } from 'vuex';
 
 import startBg from '@/assets/home/district/district-start-bg.png';
 
-import financialLogo from '@/assets/home/district/financial-wolves-glow.png';
+import financialLogo from '@/assets/home/district/financial-wolves.png';
+import financialGlow from '@/assets/home/district/wolves-glow.png';
 import financialBg from '@/assets/home/district/financial-wolves-bg.png';
-//import financialLogoBg from "@/assets/home/wolves-glow.png";
 
-import flatironLogo from '@/assets/home/district/flatiron-bois-glow.png';
+import flatironLogo from '@/assets/home/district/flatiron-bois.png';
+import flatironGlow from '@/assets/home/district/bois-glow.png';
 import flatironBg from '@/assets/home/district/flatiron-bois-bg.png';
 
-import littleitalyLogo from '@/assets/home/district/littleitaly-cats-glow.png';
+import littleitalyLogo from '@/assets/home/district/littleitaly-cats.png';
+import littleitalyGlow from '@/assets/home/district/littleitaly-cats-glow.png';
 import littleitaliBg from '@/assets/home/district/littleitaly-cats-bg.png';
 
-import lowereastLogo from '@/assets/home/district/lowereast-rats-glow.png';
+import lowereastLogo from '@/assets/home/district/lowereast-rats.png';
+import lowereastGlow from '@/assets/home/district/rats-glow.png';
 import lowereastBg from '@/assets/home/district/lowereast-rats-bg.png';
 
 export default {
@@ -115,6 +119,7 @@ export default {
           `,
         bg: startBg,
         logo: littleitalyLogo,
+        glow: littleitalyGlow,
       },
       {
         text: `
@@ -142,7 +147,7 @@ export default {
           `,
         bg: financialBg,
         logo: financialLogo,
-        //logoBg: financialLogoBg,
+        glow: financialGlow
       },
       {
         text: `
@@ -173,6 +178,7 @@ export default {
           `,
         bg: flatironBg,
         logo: flatironLogo,
+        glow: flatironGlow
       },
       {
         text: `
@@ -200,6 +206,7 @@ export default {
           `,
         bg: lowereastBg,
         logo: lowereastLogo,
+        glow: lowereastGlow
       },
     ],
   }),
@@ -320,10 +327,10 @@ export default {
       align-items: center;
       justify-content: center;
 
-      gap: 30px;
+      gap: 10px;
 
       width: 100%;
-      padding: 0 40px;
+      padding: 0 25px;
       position: absolute;
       top: -30px;
       left: 50%;
@@ -393,7 +400,8 @@ export default {
 
     &-item {
       width: 100%;
-      max-width: 310px;
+      width: 300px;
+      height: 300px;
 
       position: relative;
       z-index: 5;
@@ -405,6 +413,26 @@ export default {
         height: 100%;
 
         object-fit: contain;
+      }
+      .img-logo {
+        position: absolute;
+        top: 0;;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      .img-glow {
+        position: absolute;
+        top: 0;;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+      }
+      &:hover {
+        .img-glow {
+          display: block;
+        }
       }
     }
   }
