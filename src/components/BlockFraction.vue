@@ -385,9 +385,6 @@ export default {
     }
   }
 
-  &__swiper {
-  }
-
   &__btn {
     position: absolute;
     bottom: 10%;

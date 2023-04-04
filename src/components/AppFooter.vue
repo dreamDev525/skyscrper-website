@@ -25,7 +25,7 @@
         <img src="@/assets/home/arbitrum.png" class="footer-partner-logo" />
       </div>
       <div class="footer-terms">
-        <router-link to="/privacy-policy" style="font-size: 16px;">
+        <router-link to="/privacy-policy">
           privacy & terms & conditions
         </router-link>
       </div>
@@ -50,6 +50,7 @@ export default {
 
 .footer-bottom-block {
   display: flex;
+  padding: 0px 40px;
   @media (max-width: 800px) {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -99,8 +100,8 @@ export default {
     justify-content: center;
 
     &-link {
-      width: 35px;
-      height: 35px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       border: 1px solid white;
       padding: 5px;
@@ -118,7 +119,7 @@ export default {
   }
 
   &-disclaimer {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 18px;
     text-transform: uppercase;
     font-family: vincente, sans-serif;
@@ -130,10 +131,11 @@ export default {
 
   &-terms {
     text-transform: uppercase;
-    font-size: 1em;
+    font-size: 12px;
 
     a {
       color: #fff;
+      font-size: 13px;
     }
   }
 }
