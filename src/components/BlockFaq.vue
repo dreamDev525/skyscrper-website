@@ -143,6 +143,7 @@ export default {
 
   &__items {
     display: flex;
+    max-width: 1200px;
     @media (max-width: 800px) {
       display: flex;
       flex-direction: column;

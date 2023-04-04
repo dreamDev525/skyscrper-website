@@ -45,7 +45,7 @@
             </div>
           </div>
         </div>
-        <h1 class="title home-team-title title-headings">partners & advisors</h1>
+        <h1 class="home-team-title">partners & advisors</h1>
         <div class="home-team__persons">
           <div
             class="home-team-person"
@@ -352,11 +352,12 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-flow: dense;
-    margin-top: 2vw;
+    margin-top: 35px;
 
-    &:not(:last-of-type) {
-      margin-bottom: 60px;
-    }
+  }
+
+  h2, h3 {
+    margin: 3px !important;
   }
 
   &-person {
@@ -382,6 +383,7 @@ export default {
       font-size: 14px;
       font-weight: 100;
       margin-bottom: 10px;
+      margin-bottom: none;
     }
 
     &-role {
@@ -408,6 +410,7 @@ export default {
       display: flex;
       justify-content: center;
       position: relative;
+      height: 50px;
 
       &-link {
         width: 25px;
