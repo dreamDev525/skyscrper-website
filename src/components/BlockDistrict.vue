@@ -3,6 +3,7 @@
     <div class="home-district__teams-wrapper wrapper__districts">
       <div class="home-district__teams-wrapper-bg">
         <Swiper
+          class="home-district__bg__slider"
           :modules="[EffectFade]"
           effect="fade"
           :initialSlide="0"
@@ -399,7 +400,11 @@ export default {
       }
     }
   }
-
+  &__bg {
+    &__slider {
+      height: 100%;
+    }
+  }
   &__slider {
     max-width: 1100px;
     margin-left: auto;

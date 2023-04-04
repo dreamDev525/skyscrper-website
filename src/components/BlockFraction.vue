@@ -3,6 +3,7 @@
     <div class="home-fraction__teams-wrapper">
       <div class="home-fraction__teams-wrapper-bg">
         <Swiper
+          class="home-fraction__bg__slider"
           :modules="[EffectFade]"
           effect="fade"
           :initialSlide="3"
@@ -339,7 +340,11 @@ export default {
       }
     }
   }
-
+  &__bg {
+    &__slider {
+      height: 100%;
+    }
+  }
   &__slider {
     /* margin-bottom: -6%; */
     max-width: 1100px;
