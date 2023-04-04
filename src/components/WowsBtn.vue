@@ -46,7 +46,6 @@ export default {
 
 <style lang="scss">
 .wows-btn-link {
-  max-width: 400px;
   display: inline-block;
 
   @media (max-width: 900px) {
