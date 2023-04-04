@@ -330,11 +330,7 @@ export default {
       gap: 10px;
 
       width: 100%;
-<<<<<<< HEAD
-      padding: 0 25px;
-=======
       padding: 0 20px;
->>>>>>> fc4dbb783a56febaa3cceecaa7408457c533489a
       position: absolute;
       top: -30px;
       left: 50%;
@@ -423,7 +419,6 @@ export default {
         top: 0;;
         left: 0;
         right: 0;
-        bottom: 0;
       }
       .img-glow {
         position: absolute;
