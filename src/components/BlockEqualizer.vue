@@ -70,7 +70,7 @@ export default {
   position: relative;
   width: 5px;
   height: 20px;
-  background-color: #e7881e;
+  background-color: #ed8f07;
   animation: go-up-down 0.7s infinite alternate;
 }
 
@@ -78,7 +78,7 @@ export default {
   position: relative;
   width: 5px;
   height: 20px;
-  background-color: #e7881e;
+  background-color: #ed8f07;
   animation: go-up-down 0.6s infinite alternate;
 }
 
@@ -86,7 +86,7 @@ export default {
   position: relative;
   width: 5px;
   height: 20px;
-  background-color: #e7881e;
+  background-color: #ed8f07;
   animation: go-up-down 0.9s infinite alternate;
 }
 
@@ -94,7 +94,7 @@ export default {
   position: relative;
   width: 5px;
   height: 20px;
-  background-color: #e7881e;
+  background-color: #ed8f07;
   animation: go-up-down 0.3s infinite alternate;
 }
 
@@ -102,7 +102,7 @@ export default {
   position: relative;
   width: 5px;
   height: 20px;
-  background-color: #e7881e;
+  background-color: #ed8f07;
   animation: go-up-down 0.3s infinite alternate;
 }
 
@@ -110,7 +110,7 @@ export default {
   position: relative;
   width: 5px;
   height: 20px;
-  background-color: #e7881e;
+  background-color: #ed8f07;
   animation: go-up-down 0.9s infinite alternate;
 }
 
@@ -118,7 +118,7 @@ export default {
   position: relative;
   width: 5px;
   height: 20px;
-  background-color: #e7881e;
+  background-color: #ed8f07;
   animation: go-up-down 0.2s infinite alternate;
 }
 
@@ -126,7 +126,7 @@ export default {
   position: relative;
   width: 5px;
   height: 20px;
-  background-color: #e7881e;
+  background-color: #ed8f07;
   animation: go-up-down 0.6s infinite alternate;
 }
 
@@ -134,7 +134,7 @@ export default {
   position: relative;
   width: 5px;
   height: 20px;
-  background-color: #e7881e;
+  background-color: #ed8f07;
   animation: go-up-down 0.8s infinite alternate;
 }
 
@@ -142,7 +142,7 @@ export default {
   position: relative;
   width: 5px;
   height: 20px;
-  background-color: #e7881e;
+  background-color: #ed8f07;
   animation: go-up-down 0.3s infinite alternate;
 }
 

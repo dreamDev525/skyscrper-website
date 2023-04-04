@@ -112,7 +112,7 @@ export default {
   }
 
   &:not(:disabled):hover {
-    box-shadow: 0px 3px 20px -5px rgba(216, 191, 69, 1);
+    box-shadow: 0px 0px 15px 1px rgba(216, 191, 69, 1);
     border-top: solid 1px white;
   }
 
@@ -130,7 +130,7 @@ export default {
   }
 
   span {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   @media (max-width: 800px) {

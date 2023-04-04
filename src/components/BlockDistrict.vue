@@ -319,7 +319,7 @@ export default {
 
     button {
       width: auto;
-      padding: 5px 50px 10px 50px;
+      padding: 7px 40px 7px 40px;
     }
 
     &-wrapper {
@@ -330,7 +330,11 @@ export default {
       gap: 10px;
 
       width: 100%;
+<<<<<<< HEAD
       padding: 0 25px;
+=======
+      padding: 0 20px;
+>>>>>>> fc4dbb783a56febaa3cceecaa7408457c533489a
       position: absolute;
       top: -30px;
       left: 50%;
@@ -345,11 +349,11 @@ export default {
 
       &__divider {
         width: 100%;
-        height: 7px;
+        height: 6px;
 
         z-index: 2;
 
-        background: #e7881e;
+        background: #ed8f07;
 
         box-shadow: 0px 0px 28px 5px rgba(237, 187, 107, 0.46);
 

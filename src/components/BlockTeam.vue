@@ -228,8 +228,8 @@ export default {
           job: "OFFICIAL PARTNERS",
           role: "Treasure DAO cartridge candidate", 
           description: `
-            The web3 game console<br><br><br>`,
-          country: "",
+            The web3 game console<br><br>`,
+          country: "<br>",
           socials: [
             {
               iconName: "twitter",
@@ -246,7 +246,7 @@ export default {
             cartridge game <br>
             P&E Advisor
 `,
-          country: "",
+          country: "<br>",
           socials: [
             {
               iconName: "twitter",
@@ -298,9 +298,9 @@ export default {
           role: "Investment Arm of GotBit",
           description: `
           Founders & Product <br>
-          Launchpad<br><br>
+          Launchpad
           `,
-          country: "",
+          country: "<br>",
           socials: [
             {
               iconName: "twitter",
@@ -317,8 +317,8 @@ export default {
           name: "Loadmaster ash",
           job: "CEO - NIFTYDROPS.IO",
           role: `NFT Consultant`,
-          description: `Founder of Nifty Drops<br>`,
-          country:"UK<br><br>",
+          description: `Founder of Nifty Drops<br>UK`,
+          country:"<br>",
           socials: [
             {
               iconName: "twitter",
@@ -339,7 +339,7 @@ export default {
 .home-team {
   padding: 25px;
   &-title {
-    font-size: 40px;
+    font-size: 35px;
     color: #fff;
     font-family: "acumin-pro-condensed", sans-serif;
     font-weight: bold;
@@ -348,16 +348,15 @@ export default {
   }
 
   &__persons {
-    padding: 0 140px;
+    padding: 0 190px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     grid-auto-flow: dense;
     margin-top: 35px;
 
-  }
-
-  h2, h3 {
-    margin: 3px !important;
+    &:not(:last-of-type) {
+      margin-bottom: 40px;
+    }
   }
 
   &-person {
@@ -365,7 +364,7 @@ export default {
       font-family: vincente;
       text-transform: uppercase;
       color: rgba(255,255,255,0.8);
-      font-size: calc(20px + 10 * ((100vw - 769px) / 2048));
+      font-size: calc(18px + 10 * ((100vw - 769px) / 2048));
 
       @media (max-width: 1000px) {
         font-size: calc(25px + 5 * ((100vw - 370px) / 800));
@@ -380,22 +379,22 @@ export default {
       color: rgba(255,255,255,0.8);
       font-family: sans-serif;
       font-style: normal;
-      font-size: 14px;
+      font-size: 11px;
       font-weight: 100;
-      margin-bottom: 10px;
-      margin-bottom: none;
+      margin-bottom: 5px;
     }
 
     &-role {
       color: rgba(255,255,255,0.8);
       font-family: sans-serif;
       font-style: normal;
-      font-size: 13px;
+      font-size: 10px;
       font-weight: 100;
-      margin-bottom: 10px;
+      margin-bottom: 2px;
     }
 
     &-description {
+      line-height: 1;
       color: rgba(255,255,255,0.5);
       font-size: calc(10px + 10 * ((100vw - 769px) / 2048));
     }
@@ -403,7 +402,6 @@ export default {
     &-country {
       color: rgba(255,255,255,0.5);
       font-size: calc(10px + 10 * ((100vw - 769px) / 2048));
-      margin-bottom: 20px;
     }
 
     &-socials {
@@ -413,8 +411,8 @@ export default {
       height: 50px;
 
       &-link {
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
         padding: 5px;
         border: 1px solid #fff;
@@ -460,8 +458,8 @@ export default {
       border-radius: 50%;
       transition: 0.7s;
       transform-style: preserve-3d;
-      box-shadow: 0px 0px 39px 10px rgba(239, 193, 108, 0.39);
-      border: 10px solid #e48d1b;
+      box-shadow: 0px 0px 13px 6px rgba(239, 193, 108, 0.39);
+      border: 6px solid #e48d1b;
       // box-shadow: 0px 0px 8px 15px rgba(231, 132, 25, 0.2) inset;
 
       &::after {

@@ -138,7 +138,7 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-auto-flow: dense;
-    padding: 0px 50px;
+    padding: 0px 120px;
     /* margin-bottom: 40px;
     margin: 0; */
   }
@@ -146,7 +146,7 @@ export default {
   &-item {
     cursor: pointer;
     &-title {
-      /* font-size: calc(43px + 10 * ((100vw - 769px) / 2048)); */
+      font-size: 35px;
       font-family: 'acumin-pro-condensed', sans-serif;
       font-weight: bold;
       font-style: italic;
@@ -159,8 +159,8 @@ export default {
 
       &-image {
         img {
-          max-width: 190px;
-          max-height: 190px;  
+          max-width: 170px;
+          max-height: 170px;  
           @media (max-width: 1000px) {
             max-width: 170px;
             max-height: 170px;  

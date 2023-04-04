@@ -208,7 +208,7 @@ export default {
       gap: 10px;
 
       width: 100%;
-      padding: 0 40px;
+      padding: 0 20px;
       position: absolute;
       top: -30px;
       left: 50%;
@@ -223,11 +223,11 @@ export default {
 
       &__divider {
         width: 100%;
-        height: 9px;
+        height: 6px;
 
         z-index: 2;
 
-        background: #e7881e;
+        background: #ed8f07;
 
         box-shadow: 0px 0px 28px 7px rgba(237, 187, 107, 0.46);
 
@@ -268,6 +268,7 @@ export default {
   &__teams {
     width: 100%;
     max-width: 1280px;
+    padding: 0px 90px;
     margin: 0px auto;
 
     display: grid;

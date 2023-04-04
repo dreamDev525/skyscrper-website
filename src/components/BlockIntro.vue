@@ -150,17 +150,26 @@ export default {
 
 <style lang="scss">
 .slider-inner-area {
-  // line-height: 1.2;
+  line-height: 1;
   font-size: 30px;
 }
 
 .wrapper__home-intro {
   max-width: 1280px !important;
+  & .slider-arrow {
+    &.left {
+      left: 45px;
+    }
+    &.right {
+      right: 45px;
+    }
+  }
 }
 
 .wrapper-home-intro__seen {
   margin-top: 60px !important;
   max-width: 1200px !important;
+  padding: 0px 100px;
 }
 
 .home-intro {
@@ -178,7 +187,7 @@ export default {
 
   &__seen {
     &-title {
-      color: #e7881e !important;
+      color: #ed8f07 !important;
       font-family: "acumin-pro-condensed" !important;
       font-style: italic;
       font-weight: bold;

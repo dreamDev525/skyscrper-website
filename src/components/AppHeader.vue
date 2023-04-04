@@ -377,7 +377,7 @@ export default {
 
       & .nav__list-item {
         display: inline-block;
-        width: 170px;
+        width: 150px;
 
         & > a {
           font-family: 'acumin-pro-condensed';
@@ -389,7 +389,7 @@ export default {
           transition: color 0.3s;
 
           &:hover {
-            color: #e99341;
+            color: #ed8f07;
           }
         }
       }
@@ -399,7 +399,7 @@ export default {
         margin: 0;
         padding: 0;
         padding-bottom: 35px;
-        // border-bottom: 10px solid #e99341;
+        // border-bottom: 10px solid #ed8f07;
         // box-shadow: 0px 0px 28px 7px rgba(237, 187, 107, 0.26);
         position: relative;
         width: 100%;
@@ -409,7 +409,7 @@ export default {
           position: absolute;
           width: 100%;
           height: 6px;
-          background: #e99341;
+          background: #ed8f07;
           box-shadow: 0px 0px 20px 5px rgba(237, 187, 107, 0.46);
           bottom: 0;
         }
@@ -489,7 +489,7 @@ export default {
           transition: color 0.3s;
 
           &:hover {
-            color: #e99341;
+            color: #ed8f07;
           }
         }
       }
@@ -499,7 +499,7 @@ export default {
         margin: 0;
         padding: 0;
         padding-bottom: 2vw;
-        border-bottom: 7px solid #e99341;
+        border-bottom: 7px solid #ed8f07;
       }
     }
   }
