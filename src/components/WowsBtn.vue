@@ -134,7 +134,7 @@ export default {
   }
 
   @media (max-width: 800px) {
-    padding: 8px 25px;
+    padding: 8px 25px !important;
 
     h1 {
       font-size: calc(22px + 2 * ((100vw - 320px) / 900)) !important;

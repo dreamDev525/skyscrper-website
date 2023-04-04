@@ -26,7 +26,6 @@
             :slides-per-view="1.5"
             :centered-slides="true"
             :spaceBetween="30"
-            :pagination="{ clickable: true }"
             :breakpoints="{
               '600': {
                 slidesPerView: 2,
@@ -46,7 +45,8 @@
               v-for="k of lands"
               :key="k"
             >
-              <img src="@/assets/home/land.jpg" alt="" />
+            <img :src="require(`@/assets/home/LAND${k}.jpg`)" alt="" />
+
             </swiper-slide>
           </swiper>
         </div>
@@ -82,7 +82,7 @@ export default {
       landSwiper: null,
       plotsCount: 2500,
       lands: 3,
-      isSmall: false,
+      winSizeLevel: 3,
     };
   },
   mounted() {
@@ -97,10 +97,7 @@ export default {
       this.landSwiper = swiper;
     },
     onResize() {
-      this.isSmall = window.innerWidth <= 600;
-      if (this.isSmall) {
-        this.lands = 1;  
-      }
+      this.lands = 3;
     }
   }
 };

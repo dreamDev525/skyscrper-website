@@ -110,60 +110,62 @@
           </div>
  -->
           <!-- LINKS AND LOGO -->
-          <div class="header__innercontainer" v-if="show">
-            <nav class="header__innercontainer-nav">
-              <div class="header__innercontainer-nav-logo">
-                <router-link
-                  to="/"
-                  class="header__innercontainer-nav-logo-link"
-                >
-                  <img src="@/assets/logo.png" alt="" />
-                </router-link>
-              </div>
-              <ul class="header__innercontainer-nav-wrapper">
-                <li class="header__innercontainer-nav-item">
-                  <router-link to="/#info" v-scroll-to="'#info'"
-                    >a city in need</router-link
+          <Transition name="slide-fade">
+            <div class="header__innercontainer" v-if="show">
+              <nav class="header__innercontainer-nav">
+                <div class="header__innercontainer-nav-logo">
+                  <router-link
+                    to="/"
+                    class="header__innercontainer-nav-logo-link"
                   >
-                </li>
-                <li class="header__innercontainer-nav-item">
-                  <router-link to="/#steps" v-scroll-to="'#faq'"
-                    >word on the street</router-link
-                  >
-                </li>
-                <li class="header__innercontainer-nav-item">
-                  <router-link to="/mintland">LAND DEEDS SALE</router-link>
-                </li>
-                <li class="header__innercontainer-nav-item">
-                  <router-link to="/#steps" v-scroll-to="'#steps'"
-                    >road to redemtoin</router-link
-                  >
-                </li>
+                    <img src="@/assets/logo.png" alt="" />
+                  </router-link>
+                </div>
+                <ul class="header__innercontainer-nav-wrapper">
+                  <li class="header__innercontainer-nav-item">
+                    <router-link to="/#info" v-scroll-to="'#info'"
+                      >a city in need</router-link
+                    >
+                  </li>
+                  <li class="header__innercontainer-nav-item">
+                    <router-link to="/#steps" v-scroll-to="'#faq'"
+                      >word on the street</router-link
+                    >
+                  </li>
+                  <li class="header__innercontainer-nav-item">
+                    <router-link to="/mintland">LAND DEEDS SALE</router-link>
+                  </li>
+                  <li class="header__innercontainer-nav-item">
+                    <router-link to="/#steps" v-scroll-to="'#steps'"
+                      >road to redemtoin</router-link
+                    >
+                  </li>
 
-                <li class="header__innercontainer-nav-item">
-                  <router-link to="/#steps" v-scroll-to="'#steps'"
-                    >NYC INVESTOR DECK</router-link
-                  >
-                </li>
-                <li class="header__innercontainer-nav-item">
-                  <router-link to="/#team" v-scroll-to="'#team'"
-                    >TEAM & ADVISORS</router-link
-                  >
-                </li>
-              </ul>
-            </nav>
-            <!-- SOCIALS -->
-            <div class="header__inner-socials">
-              <div class="socials-wrapper" style="margin: 0 auto">
-                <a target="_blank" :href="links.discord" class="socials-link">
-                  <img src="@/assets/social/discord.svg" alt="" />
-                </a>
-                <a target="_blank" :href="links.twitter" class="socials-link">
-                  <img src="@/assets/social/twitter.svg" alt="" />
-                </a>
+                  <li class="header__innercontainer-nav-item">
+                    <router-link to="/#steps" v-scroll-to="'#steps'"
+                      >NYC INVESTOR DECK</router-link
+                    >
+                  </li>
+                  <li class="header__innercontainer-nav-item">
+                    <router-link to="/#team" v-scroll-to="'#team'"
+                      >TEAM & ADVISORS</router-link
+                    >
+                  </li>
+                </ul>
+              </nav>
+              <!-- SOCIALS -->
+              <div class="header__inner-socials">
+                <div class="socials-wrapper" style="margin: 0 auto">
+                  <a target="_blank" :href="links.discord" class="socials-link">
+                    <img src="@/assets/social/discord.svg" alt="" />
+                  </a>
+                  <a target="_blank" :href="links.twitter" class="socials-link">
+                    <img src="@/assets/social/twitter.svg" alt="" />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          </Transition>
         </div>
         <div class="logo mobile-logo">
           <a href="/" class="logo-link">
@@ -251,6 +253,19 @@ export default {
 </script>
 
 <style lang="scss">
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(-20px);
+  opacity: 0;
+}
 .pointer {
   cursor: pointer;
 }

@@ -478,7 +478,7 @@ export default {
     }
 
     .wows-btn {
-      padding: 12px 40px !important;
+      padding: 12px 40px;
       @media (max-width: 1150px) {
 
         font-size: calc(22px + 2 * ((100vw - 320px) / 900));
