@@ -75,7 +75,7 @@ h5 {
 }
 
 .title-headings {
-  font-size: calc(40px + 25 * ((100vw - 769px) / 2048)) !important;
+  font-size: calc(38px + 25 * ((100vw - 769px) / 2048)) !important;
 }
 
 .logo {

@@ -149,7 +149,7 @@ export default {
   }
 
   &-item {
-    border-bottom: 2px solid white;
+    border-bottom: 1px solid white;
     margin-bottom: 30px;
 
     &-title {

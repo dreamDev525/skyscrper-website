@@ -18,7 +18,7 @@
               aria-expanded="false"
             >
               <h1>{{ faq.title }}</h1>
-              <img src="@/assets/icons/arrow-down.svg" style="width: 30px; height: 30px" alt="" />
+              <img src="@/assets/icons/arrow-down.svg" style="width: 28px; height: 28px" alt="" />
             </div>
             <div class="collapse home-faq-item-text" :id="'collapse' + col">
               <h2 v-html="faq.text" />
@@ -143,7 +143,7 @@ export default {
 
   &__items {
     display: flex;
-    max-width: 1200px;
+    padding: 0px 100px;
     @media (max-width: 800px) {
       display: flex;
       flex-direction: column;
@@ -164,9 +164,8 @@ export default {
       // align-items: center;
 
       & > h1 {
-        font-weight: bold;
         text-transform: uppercase;
-        font-size: 25px;
+        font-size: 20px;
       }
 
       &[aria-expanded="true"] {
@@ -216,7 +215,6 @@ export default {
     }
     &.right {
       @media (min-width: 800px) {
-        border-left: 1px solid white;
         padding-left: 40px;
       }
     }
