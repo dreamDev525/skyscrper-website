@@ -23,7 +23,7 @@
           >
           <div class="teams-avatar">
             <img class="glow" :src="slide.glow"/>
-            <img class="logo" :src="slide.logo"/>
+            <img class="avatar" :src="slide.avatar"/>
           </div>
         </div>
       </div>
@@ -64,25 +64,25 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import WowsBtn from "@/components/WowsBtn.vue";
 import { mapGetters } from "vuex";
 
-import catLogo from "@/assets/home/fraction/cats.png";
+import catAvatar from "@/assets/home/fraction/cats.png";
 import catGlow from "@/assets/home/fraction/cats-glow.png";
 import catChar from "@/assets/home/fraction/cat-char.png";
 import catText from "@/assets/home/fraction/cat-text.png";
 import catBg from "@/assets/home/fraction/cat-bg.png";
 
-import ratLogo from "@/assets/home/fraction/rats.png";
+import ratAvatar from "@/assets/home/fraction/rats.png";
 import ratGlow from "@/assets/home/fraction/rats-glow.png";
 import ratChar from "@/assets/home/fraction/rat-char.png";
 import ratText from "@/assets/home/fraction/rat-text.png";
 import ratBg from "@/assets/home/fraction/rat-bg.png";
 
-import boiLogo from "@/assets/home/fraction/bois.png";
+import boiAvatar from "@/assets/home/fraction/bois.png";
 import boiGlow from "@/assets/home/fraction/bois-glow.png";
 import boiChar from "@/assets/home/fraction/boi-char.png";
 import boiText from "@/assets/home/fraction/boi-text.png";
 import boiBg from "@/assets/home/fraction/boi-bg.png";
 
-import wolveLogo from "@/assets/home/fraction/wolves.png";
+import wolveAvatar from "@/assets/home/fraction/wolves.png";
 import wolveGlow from "@/assets/home/fraction/wolves-glow.png";
 import wolveChar from "@/assets/home/fraction/wolve-char.png";
 import wolveText from "@/assets/home/fraction/wolve-text.png";
@@ -101,28 +101,28 @@ export default {
         character: catChar,
         text: catText,
         bg: catBg,
-        logo: catLogo,
+        avatar: catAvatar,
         glow: catGlow
       },
       {
         character: wolveChar,
         text: wolveText,
         bg: wolveBg,
-        logo: wolveLogo,
+        avatar: wolveAvatar,
         glow: wolveGlow
       },
       {
         character: boiChar,
         text: boiText,
         bg: boiBg,
-        logo: boiLogo,
+        avatar: boiAvatar,
         glow: boiGlow
       },
       {
         character: ratChar,
         text: ratText,
         bg: ratBg,
-        logo: ratLogo,
+        avatar: ratAvatar,
         glow: ratGlow
       },
     ],
@@ -149,10 +149,10 @@ export default {
   &::after {
     content: "";
     position: absolute;
-    top: -400px;
+    top: -200px;
     left: 0;
     right: 0;
-    height: 400px;
+    height: 200px;
     background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0) 0%,
@@ -173,7 +173,7 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    height: 400px;
+    height: 200px;
     background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 1) 15%,
@@ -197,7 +197,7 @@ export default {
 
     button {
       width: auto;
-      padding: 5px 50px 10px 50px;
+      padding: 7px 40px 7px 40px;
     }
 
     &-wrapper {
@@ -241,7 +241,7 @@ export default {
   &__teams-wrapper {
     // background: url("@/assets/home/fraction/fraction_bg.png") no-repeat;
     background-size: cover;
-    padding: 80px 25px 0 25px;
+    padding: 40px 25px 0 25px;
 
     position: relative;
 
@@ -259,42 +259,55 @@ export default {
         object-fit: cover;
       }
     }
-
-    @media screen and (max-width: 700px) {
-      padding: 80px 25px 80px 25px;
-    }
   }
 
   &__teams {
     width: 100%;
     max-width: 1280px;
-    padding: 0px 90px;
     margin: 0px auto;
+    padding: 0px 90px;
 
     display: grid;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     grid-template-columns: repeat(4, minmax(100px, 1fr));
     justify-content: center;
     grid-gap: 20px;
+    z-index: 1000;
 
-    @media (max-width: 700px) {
+    @media (max-width: 1000px) {
       grid-template-columns: repeat(2, minmax(100px, 1fr));
       justify-content: center;
-
       grid-gap: 10px;
+      position: relative;
+    }
+
+    @media (max-width: 700px) {
+      padding: 0px 50px;
     }
 
     &-item {
+      display: flex;
+      justify-content: center;
       .teams-avatar {
+        max-width: 250px;
         width: 100%;
         position: relative;
-        .logo {
-          position: absolute;
-          left: 0;
+        img {
+          width: 100%;
+  
+          object-fit: contain;
+        }
+        .avatar {
+          position: relative;
+          z-index:1;
         }
         .glow {
           position: absolute;
           left: 0;
           display: none;
+          z-index:0
         }
         &:hover {
           .glow {
@@ -307,26 +320,19 @@ export default {
 
   &__slider {
     /* margin-bottom: -6%; */
-    max-width: 1280px;
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
 
-    .swiper-slide {
-      &:nth-child(2) {
-        .home-fraction__slider-item {
-          margin-top: 6%;
-        }
-      }
-    }
     &-item {
       width: 100%;
-      margin-top: 72px;
+      margin-top: 15%;
 
       display: flex;
       align-items: flex-start;
 
-      @media screen and (max-width: 700px) {
-        margin-top: 0px;
+      @media screen and (max-width: 1000px) {
+        margin-top: 0;
         flex-direction: column;
         gap: 0px;
       }
@@ -334,7 +340,7 @@ export default {
       &-character {
         width: 50%;
 
-        @media screen and (max-width: 700px) {
+        @media screen and (max-width: 1000px) {
           width: 100%;
           height: 400px;
           order: 2;
@@ -353,9 +359,9 @@ export default {
 
         margin-top: 8%;
 
-        @media screen and (max-width: 700px) {
+        @media screen and (max-width: 1000px) {
           width: 100%;
-          height: 250px;
+          height: 150px;
           /* margin-top: 50px; */
 
           order: 1;
@@ -370,9 +376,7 @@ export default {
       }
     }
   }
-  &__swiper {
-      transform: translateY(100px);
-  }
+
   &__btn {
     position: absolute;
     bottom: 10%;
@@ -390,7 +394,7 @@ export default {
 
     @media screen and (min-width: 1800px) {
       bottom: 15%;
-      right: 33%;
+      right: 30%;
     }
 
     @media screen and (min-width: 2000px) {
@@ -418,8 +422,12 @@ export default {
       bottom: 10%;
     }
 
-    @media screen and (max-width: 700px) {
-      position: static;
+    @media screen and (max-width: 1000px) {
+      position: absolute;
+      left: 0;
+      transform: translateX(9%);
+      bottom: 0px;
+      z-index: 1000;
       /* margin-top: 70px; */
     }
 

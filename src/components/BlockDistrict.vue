@@ -1,7 +1,7 @@
 <template>
-  <div class="home-fraction">
-    <div class="home-fraction__teams-wrapper wrapper__districts">
-      <div class="home-fraction__teams-wrapper-bg">
+  <div class="home-district">
+    <div class="home-district__teams-wrapper wrapper__districts">
+      <div class="home-district__teams-wrapper-bg">
         <img
           rel="preload"
           :src="districtSlides[districtSwiper?.activeIndex ?? 0].bg"
@@ -19,38 +19,40 @@
         >
         <div class="faction-btn-wrapper__divider"></div>
       </div>
-      <div class="home-fraction__teams mint-district__teams">
+      <div class="home-district__teams mint-district__teams">
         <div
-          class="home-fraction__teams-item"
+          class="home-district__teams-item"
           v-for="(slide, slideIndex) of districtSlides"
           :key="slideIndex"
           @click="onClickSlider(slideIndex)"
         >
-          <img class="img-glow" :src="slide.glow" alt="" />
-          <img class="img-logo" :src="slide.logo" alt="" />
+          <div class="district-avatar">
+            <img class="img-glow" :src="slide.glow" alt="" />
+            <img class="img-avatar" :src="slide.avatar" alt="" />
+          </div>
         </div>
       </div>
-      <div class="home-fraction__slider">
+      <div class="home-district__slider">
         <swiper
-          class="home-fraction__swiper"
+          class="home-district__swiper"
           :initialSlide="0"
           @swiper="ondistrictSwiper"
         >
           <swiper-slide
             v-for="(slide, slideIndex) of districtSlides"
             :key="slideIndex"
-            class="home-fraction__slider-slide"
+            class="home-district__slider-slide"
           >
             <div
               v-show="isDistrict"
-              class="home-fraction__slider-item-district"
+              class="home-district__slider-item-district"
             >
               <div class="district__slider-text" v-html="slide.text" />
             </div>
           </swiper-slide>
         </swiper>
       </div>
-      <div v-if="isDistrict" class="home-fraction__btn-district">
+      <div v-if="isDistrict" class="home-district__btn-district">
         <WowsBtn class="whitelist-btn" buttonType="link" :url="links.whitelist">
           JOIN WHITELIST
         </WowsBtn>
@@ -66,19 +68,19 @@ import { mapGetters } from 'vuex';
 
 import startBg from '@/assets/home/district/district-start-bg.png';
 
-import financialLogo from '@/assets/home/district/financial-wolves.png';
+import financialAvatar from '@/assets/home/district/financial-wolves.png';
 import financialGlow from '@/assets/home/district/wolves-glow.png';
 import financialBg from '@/assets/home/district/financial-wolves-bg.png';
 
-import flatironLogo from '@/assets/home/district/flatiron-bois.png';
+import flatironAvatar from '@/assets/home/district/flatiron-bois.png';
 import flatironGlow from '@/assets/home/district/bois-glow.png';
 import flatironBg from '@/assets/home/district/flatiron-bois-bg.png';
 
-import littleitalyLogo from '@/assets/home/district/littleitaly-cats.png';
+import littleitalyAvatar from '@/assets/home/district/littleitaly-cats.png';
 import littleitalyGlow from '@/assets/home/district/littleitaly-cats-glow.png';
 import littleitaliBg from '@/assets/home/district/littleitaly-cats-bg.png';
 
-import lowereastLogo from '@/assets/home/district/lowereast-rats.png';
+import lowereastAvatar from '@/assets/home/district/lowereast-rats.png';
 import lowereastGlow from '@/assets/home/district/rats-glow.png';
 import lowereastBg from '@/assets/home/district/lowereast-rats-bg.png';
 
@@ -95,117 +97,51 @@ export default {
     districtSlides: [
       {
         text: `
-          <div class="slider-district-text-area">
-            <div>
-            <div>
-            LITTLE ITALY & CO. SMALL IN SIZE,
-            </div>
-            <div>
-            BIG IN FLAVOUR.
-            </div>
-            </div>
-            <div>
-            <div>
-            MAFIA DISTRICTS & HOT BEDS OF
-            </div>
-            <div>
-            SLEAZE AND CORRUPT DEALS. IF THAT'S
-            </div>
-            <div>
+            LITTLE ITALY & CO. SMALL IN SIZE,<br>
+            BIG IN FLAVOUR.<br><br>
+            MAFIA DISTRICTS & HOT BEDS OF<br>
+            SLEAZE AND CORRUPT DEALS. IF THAT'S<br>
             YOUR THING, THEN WELCOME HOME.
-            </div>
-            </div>
-          </div>
           `,
         bg: startBg,
-        logo: littleitalyLogo,
+        avatar: littleitalyAvatar,
         glow: littleitalyGlow,
       },
       {
         text: `
-          <div class="slider-district-text-area">
-            <div>
-            <div>
-            FINANCIAL DISTRICT HAS FALLEN ON
-            </div>
-            <div>
-            HARD TIMES. ONCE PAVED IN GOLD, NOW
-            </div>
-            <div>
-            PAVED IN RUBBISH.
-            </div>
-            </div>
-            <div>
-            <div>
-            BUT YOU CANT KEEP A BAD WOLF DOWN,
-            </div>
-            <div>
+            FINANCIAL DISTRICT HAS FALLEN ON<br>
+            HARD TIMES. ONCE PAVED IN GOLD, NOW<br>
+            PAVED IN RUBBISH.<br><br>
+            BUT YOU CANT KEEP A BAD WOLF DOWN,<br>
             TIME TO NEGOTIATE A DEAL
-            </div>
-            </div>
-          </div>
           `,
         bg: financialBg,
-        logo: financialLogo,
+        avatar: financialAvatar,
         glow: financialGlow
       },
       {
         text: `
-          <div class="slider-district-text-area">
-            <div>
-            <div>
-            FLAT IRON & GRAMERCY, ONCE
-            </div>
-            <div>
-            RESPECTABLE DISTRICTS, NOW HAVE
-            </div>
-            <div>
-            FALLEN PREY TO A BLIGHT OF CRIME &
-            </div>
-            <div>
-            CORRUPTION.
-            </div>
-            </div>
-            <div>
-            <div>
-            FEAR NOT, THERES A FEW GOOD BOIS
-            </div>
-            <div>
+            FLAT IRON & GRAMERCY, ONCE<br>
+            RESPECTABLE DISTRICTS, NOW HAVE<br>
+            FALLEN PREY TO A BLIGHT OF CRIME &<br>
+            CORRUPTION.<br><br>
+            FEAR NOT, THERES A FEW GOOD BOIS<br>
             LEFT READY FOR A FIGHT.
-            </div>
-            </div>
-          </div>
           `,
         bg: flatironBg,
-        logo: flatironLogo,
+        avatar: flatironAvatar,
         glow: flatironGlow
       },
       {
         text: `
-          <div class="slider-district-text-area">
-            <div>
-            <div>
-            LOWER EAST SIDE. HOW LOW CAN YOU GO?
-            </div>
-            </div>
-            <div>
-            <div>
-            WELL THE PLOTS MAY BE BE CHEAP...
-            </div>
-            <div>
-            BUT THERES A LOT OF BAD THINGS YOU
-            </div>
-            <div>
-            CAN DO IN THE LOWER EAST SIDE AND ALL
-            </div>
-            <div>
+            LOWER EAST SIDE. HOW LOW CAN YOU GO?<br><br>
+            WELL THE PLOTS MAY BE BE CHEAP...<br>
+            BUT THERES A LOT OF BAD THINGS YOU<br>
+            CAN DO IN THE LOWER EAST SIDE AND ALL<br>
             OF IT MAKES MONEY...
-            </div>
-            </div>
-          </div>
           `,
         bg: lowereastBg,
-        logo: lowereastLogo,
+        avatar: lowereastAvatar,
         glow: lowereastGlow
       },
     ],
@@ -232,24 +168,19 @@ export default {
 }
 
 .wrapper__districts {
-  min-height: 900px !important;
-
-  @media screen and (min-width: 1700px) {
-    min-height: 1000px !important;
-  }
-
-  @media screen and (min-width: 1800px) {
-    min-height: 1100px !important;
-  }
-
-  @media screen and (min-width: 1800px) {
-    min-height: 1200px !important;
-  }
+  min-height: 700px !important;
 }
 
 .district__slider-text {
   background: rgba(0, 0, 0, 0.5);
-  padding: 30px;
+  padding: 20px 30px;
+  font-size: 30px;
+  color: white;
+  font-style: italic;
+  line-height: 1;
+  font-family: "acumin-pro-condensed", sans-serif;
+  font-weight: bold;
+  text-align: start;
 }
 
 .slider-district-text-area {
@@ -266,16 +197,16 @@ export default {
   }
 }
 
-.home-fraction {
+.home-district {
   position: relative;
 
   &::after {
     content: '';
     position: absolute;
-    top: -400px;
+    top: -200px;
     left: 0;
     right: 0;
-    height: 400px;
+    height: 200px;
     background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0) 0%,
@@ -296,7 +227,7 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    height: 400px;
+    height: 200px;
     background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 1) 15%,
@@ -385,17 +316,21 @@ export default {
   &__teams {
     width: 100%;
     margin: 0px auto;
+    padding: 0px 90px;
 
     display: grid;
     grid-template-columns: repeat(4, minmax(100px, 1fr));
     justify-content: center;
     grid-gap: 20px;
 
-    @media (max-width: 700px) {
+    @media (max-width: 1000px) {
       grid-template-columns: repeat(2, minmax(100px, 1fr));
       justify-content: center;
-
       grid-gap: 10px;
+    }
+
+    @media (max-width: 700px) {
+      padding: 0px 50px;
     }
 
     &-item {
@@ -403,63 +338,68 @@ export default {
 
       position: relative;
       z-index: 5;
-
+      display: flex;
+      justify-content: center;
       cursor: pointer;
-
-      img {
+      .district-avatar {
+        max-width: 250px;
         width: 100%;
-
-        object-fit: contain;
-      }
-      .img-logo {
-        position: absolute;
-        top: 0;;
-        left: 0;
-        right: 0;
-      }
-      .img-glow {
-        position: absolute;
-        top: 0;;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: none;
-      }
-      &:hover {
+        position: relative;
+        img {
+          width: 100%;
+  
+          object-fit: contain;
+        }
+        .img-avatar {
+          position: relative;
+          z-index: 1;
+        }
         .img-glow {
-          display: block;
+          position: absolute;
+          top: 0;;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: none;
+          z-index: 0;
+        }
+        &:hover {
+          .img-glow {
+            display: block;
+          }
         }
       }
     }
   }
 
   &__slider {
-    max-width: 1280px;
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
-
-    .swiper-slide {
-      &:nth-child(2) {
-        .home-fraction__slider-item {
-          margin-top: 6%;
-        }
-      }
+    
+    @media (max-width: 700px) {
+      padding: 0px 50px;
     }
 
     &-item-district {
       width: 50%;
-      padding-top: 70px;
+      padding-top: 50px;
 
       display: flex;
       justify-content: flex-start;
 
-      @media screen and (max-width: 700px) {
+      @media screen and (max-width: 1000px) {
+        width: 70%;
         flex-direction: column;
         gap: 0px;
       }
 
+      @media screen and (max-width: 700px) {
+        width: 100%;
+      }
+
       &-character {
-        @media screen and (max-width: 700px) {
+        @media screen and (max-width: 1000px) {
           width: 100%;
           height: 400px;
           order: 2;
@@ -474,7 +414,8 @@ export default {
       }
 
       &-text {
-        @media screen and (max-width: 700px) {
+        font-size: 16px;
+        @media screen and (max-width: 1000px) {
           width: 100%;
           height: 250px;
           margin-top: 50px;
@@ -492,6 +433,47 @@ export default {
     }
   }
 
+  &__btn-district {
+    position: absolute;
+    bottom: 10%;
+    right: 22%;
 
+    // @media screen and (min-width: 1450px) {
+    //   right: 15%;
+    // }
+
+    // @media screen and (min-width: 1600px) {
+    //   right: 20%;
+    // }
+
+    // @media screen and (min-width: 1800px) {
+    //   right: 30%;
+    // }
+
+    @media screen and (max-width: 1150px) {
+      right: 17%;
+    }
+
+    // @media screen and (max-width: 990px) {
+    //   right: 16%;
+    // }
+
+    @media screen and (max-width: 1000px) {
+      position: absolute;
+      left: 0;
+      transform: translateX(9%);
+      bottom: 0px;
+      z-index: 1000;
+      /* margin-top: 70px; */
+    }
+
+    .wows-btn {
+      padding: 12px 40px !important;
+      @media (max-width: 1150px) {
+
+        font-size: calc(22px + 2 * ((100vw - 320px) / 900));
+      }
+    }
+  }
 }
 </style>

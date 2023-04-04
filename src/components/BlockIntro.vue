@@ -208,6 +208,7 @@ export default {
       & img {
         width: 100%;
         height: 100%;
+        max-width: 250px;
         object-fit: contain;
         object-position: center;
       }
@@ -215,6 +216,10 @@ export default {
       @media (max-width: 900px) {
         grid-template-columns: repeat(2, 1fr);
       }
+    }
+    &-partner {
+      display: flex;
+      justify-content: center;
     }
   }
 

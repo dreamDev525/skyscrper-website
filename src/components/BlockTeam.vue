@@ -354,6 +354,10 @@ export default {
     grid-auto-flow: dense;
     margin-top: 35px;
 
+    @media (max-width: 1000px) {
+      padding: 0 100px;
+    }
+
     &:not(:last-of-type) {
       margin-bottom: 40px;
     }

@@ -146,8 +146,9 @@ export default {
   &__items {
     display: flex;
     padding: 0px 100px;
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
       display: flex;
+      padding: 0px 20px;
       flex-direction: column;
       align-items: center;
     }
@@ -204,18 +205,18 @@ export default {
     width: 50%;
     color: #fff;
     font-family: "acumin-pro-condensed", sans-serif;
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
       width: 90%;
     }
 
     &.left {
-      @media (min-width: 800px) {
+      @media (min-width: 1000px) {
         border-right: 1px solid white;
         padding-right: 40px;
       }
     }
     &.right {
-      @media (min-width: 800px) {
+      @media (min-width: 1000px) {
         padding-left: 40px;
       }
     }
