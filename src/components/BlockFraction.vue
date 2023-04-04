@@ -2,11 +2,16 @@
   <div class="home-fraction">
     <div class="home-fraction__teams-wrapper">
       <div class="home-fraction__teams-wrapper-bg">
-        <img
-          rel="preload"
-          :src="fractionSlides[fractionSwiper?.activeIndex ?? 0].bg"
-          alt=""
-        />
+        <Swiper
+          :modules="[EffectFade]"
+          effect="fade"
+          :initialSlide="3"
+          @swiper="onBgSwiper"
+        >
+          <swiper-slide v-for="(slide, idx) in fractionSlides" :key="idx">
+            <img :src="slide.bg" />
+          </swiper-slide>
+        </Swiper>
       </div>
       <div class="faction-btn-wrapper">
         <div class="faction-btn-wrapper__divider"></div>
@@ -19,7 +24,7 @@
         <div class="home-fraction__teams-item"
           v-for="(slide, slideIndex) of fractionSlides"
           :key="slideIndex"
-          @click="fractionSwiper.slideTo(slideIndex)"
+          @click="changeSlide(slideIndex)"
           >
           <div class="teams-avatar">
             <img class="glow" :src="slide.glow"/>
@@ -61,6 +66,7 @@
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
+import { EffectFade } from "swiper";
 import WowsBtn from "@/components/WowsBtn.vue";
 import { mapGetters } from "vuex";
 
@@ -88,6 +94,9 @@ import wolveChar from "@/assets/home/fraction/wolve-char.png";
 import wolveText from "@/assets/home/fraction/wolve-text.png";
 import wolveBg from "@/assets/home/fraction/wolve-bg.png";
 
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+
 export default {
   components: {
     Swiper,
@@ -96,6 +105,7 @@ export default {
   },
   data: () => ({
     fractionSwiper: null,
+    bgSwiper: null,
     fractionSlides: [
       {
         character: catChar,
@@ -128,6 +138,11 @@ export default {
     ],
     
   }),
+  setup() {
+    return {
+      EffectFade,
+    }
+  },
   computed: {
     ...mapGetters(["links"]),
   },
@@ -135,6 +150,13 @@ export default {
     onFractionSwiper(swiper) {
       this.fractionSwiper = swiper;
     },
+    onBgSwiper(swiper) {
+      this.bgSwiper = swiper;
+    },
+    changeSlide(slideIndex) {
+      this.fractionSwiper.slideTo(slideIndex);
+      this.bgSwiper.slideTo(slideIndex, 1000);
+    }
   },
   mounted() {
     console.log(this.fractionSlides[this.fractionSwiper?.activeIndex].bg);

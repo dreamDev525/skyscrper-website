@@ -2,11 +2,16 @@
   <div class="home-district">
     <div class="home-district__teams-wrapper wrapper__districts">
       <div class="home-district__teams-wrapper-bg">
-        <img
-          rel="preload"
-          :src="districtSlides[districtSwiper?.activeIndex ?? 0].bg"
-          alt=""
-        />
+        <Swiper
+          :modules="[EffectFade]"
+          effect="fade"
+          :initialSlide="0"
+          @swiper="ondistrictBgSwiper"
+        >
+          <swiper-slide v-for="(slide, idx) in districtSlides" :key="idx">
+            <img :src="slide.bg" />
+          </swiper-slide>
+        </Swiper>
       </div>
       <div class="faction-btn-wrapper">
         <div class="faction-btn-wrapper__divider"></div>
@@ -14,9 +19,9 @@
           class="faction-btn"
           buttonType="link"
           url="javascript:void(0);"
-          target="_self"
-          >THE FIRST'S DISTRICT FOR SALE</WowsBtn
-        >
+          target="_self">
+          THE FIRST'S DISTRICT FOR SALE
+        </WowsBtn>
         <div class="faction-btn-wrapper__divider"></div>
       </div>
       <div class="home-district__teams mint-district__teams">
@@ -63,6 +68,7 @@
 
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import { EffectFade } from 'swiper';
 import WowsBtn from '@/components/WowsBtn.vue';
 import { mapGetters } from 'vuex';
 
@@ -84,6 +90,9 @@ import lowereastAvatar from '@/assets/home/district/lowereast-rats.png';
 import lowereastGlow from '@/assets/home/district/rats-glow.png';
 import lowereastBg from '@/assets/home/district/lowereast-rats-bg.png';
 
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+
 export default {
   components: {
     Swiper,
@@ -93,6 +102,7 @@ export default {
   data: () => ({
     isDistrict: false,
     districtSwiper: null,
+    districtBgSwiper: null,
     startBg,
     districtSlides: [
       {
@@ -146,6 +156,11 @@ export default {
       },
     ],
   }),
+  setup() {
+    return {
+      EffectFade,
+    }
+  },
   computed: {
     ...mapGetters(['links']),
   },
@@ -153,8 +168,12 @@ export default {
     ondistrictSwiper(swiper) {
       this.districtSwiper = swiper;
     },
+    ondistrictBgSwiper(swiper) {
+      this.districtBgSwiper = swiper;
+    },
     onClickSlider(slideIndex) {
       this.districtSwiper.slideTo(slideIndex);
+      this.districtBgSwiper.slideTo(slideIndex, 1000);
       this.isDistrict = true;
       this.districtSlides[0].bg = littleitaliBg;
     },
