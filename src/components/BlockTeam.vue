@@ -352,11 +352,11 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     grid-auto-flow: dense;
-    margin-top: 2vw;
+    margin-top: 35px;
 
-    // &:not(:last-of-type) {
-    //   margin-bottom: 10px;
-    // }
+    &:not(:last-of-type) {
+      margin-bottom: 40px;
+    }
   }
 
   &-person {
@@ -408,6 +408,7 @@ export default {
       display: flex;
       justify-content: center;
       position: relative;
+      height: 50px;
 
       &-link {
         width: 20px;
