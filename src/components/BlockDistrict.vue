@@ -312,7 +312,7 @@ export default {
 
     button {
       width: auto;
-      padding: 5px 50px 10px 50px;
+      padding: 7px 40px 7px 40px;
     }
 
     &-wrapper {
@@ -320,10 +320,10 @@ export default {
       align-items: center;
       justify-content: center;
 
-      gap: 30px;
+      gap: 10px;
 
       width: 100%;
-      padding: 0 40px;
+      padding: 0 20px;
       position: absolute;
       top: -30px;
       left: 50%;
@@ -338,11 +338,11 @@ export default {
 
       &__divider {
         width: 100%;
-        height: 7px;
+        height: 6px;
 
         z-index: 2;
 
-        background: #e7881e;
+        background: #ed8f07;
 
         box-shadow: 0px 0px 28px 5px rgba(237, 187, 107, 0.46);
 

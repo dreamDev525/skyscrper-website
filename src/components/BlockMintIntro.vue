@@ -157,7 +157,7 @@ export default {
 
   &__seen {
     &-title {
-      color: #e7881e !important;
+      color: #ed8f07 !important;
       font-family: "acumin-pro-condensed" !important;
       font-style: italic;
       font-weight: bold;

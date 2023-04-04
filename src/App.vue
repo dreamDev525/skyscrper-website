@@ -90,14 +90,14 @@ h5 {
   &-link {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
     height: 150px;
     width: 100%;
   }
 
   & img {
-    height: 180px;
+    height: 190px;
     object-fit: contain;
   }
 }
@@ -116,7 +116,7 @@ h5 {
 }
 
 .slider-highlighted {
-  color: #e7881e;
+  color: #ed8f07;
 }
 
 .slider-inner-area {

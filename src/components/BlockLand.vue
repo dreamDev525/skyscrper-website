@@ -196,8 +196,8 @@ export default {
 }
 
 .slider-arrow {
-  height: 80px;
-  width: 80px;
+  height: 55px;
+  width: 55px;
   position: absolute;
 
   &.right {
