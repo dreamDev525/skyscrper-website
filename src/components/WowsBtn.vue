@@ -14,7 +14,7 @@
     class="wows-btn-link"
     :href="url"
     v-else-if="buttonType === 'link'"
-    target="_blank"
+    :target="url === '#' ? '' : '_blank'"
   >
     <button type="button" class="wows-btn">
       <span>

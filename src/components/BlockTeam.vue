@@ -225,7 +225,7 @@ export default {
         {
           imageName: "team_treasure",
           name: "TREASURE DAO",
-          job: "OFFICIAL PARTNERS",
+          job: "PARTNERS IN PROGRESS",
           role: "Treasure DAO cartridge candidate", 
           description: `
             The web3 game console<br><br>`,
@@ -348,16 +348,21 @@ export default {
   }
 
   &__persons {
-    padding: 0 190px;
+    width: 900px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     grid-auto-flow: dense;
     margin-top: 35px;
 
     @media (max-width: 1000px) {
+      width: 100%;
       padding: 0 100px;
     }
 
+    @media (max-width: 550px) {
+      padding: 0 20px;
+    }
     &:not(:last-of-type) {
       margin-bottom: 40px;
     }
@@ -365,7 +370,7 @@ export default {
 
   &-person {
     &-name {
-      font-family: acumin-pro-condensed;
+      font-family: 'acumin-pro-condensed', sans-serif;
       font-style: italic;
       font-weight: bold;
       text-transform: uppercase;
@@ -383,18 +388,20 @@ export default {
 
     &-job {
       color: rgba(255,255,255,0.8);
-      font-family: sans-serif;
+      // font-family: sans-serif;
+      font-family: 'acumin-pro-condensed', sans-serif;
       font-style: normal;
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 100;
       margin-bottom: 5px;
     }
 
     &-role {
       color: rgba(255,255,255,0.8);
-      font-family: sans-serif;
+      // font-family: sans-serif;
+      font-family: 'acumin-pro-condensed', sans-serif;
       font-style: normal;
-      font-size: 10px;
+      font-size: 13px;
       font-weight: 100;
       margin-bottom: 2px;
     }
@@ -402,12 +409,13 @@ export default {
     &-description {
       line-height: 1;
       color: rgba(255,255,255,0.5);
-      font-size: calc(10px + 10 * ((100vw - 769px) / 2048));
+      font-size: 13px;
+      font-family: 'acumin-pro-condensed', sans-serif;
     }
 
     &-country {
       color: rgba(255,255,255,0.5);
-      font-size: calc(10px + 10 * ((100vw - 769px) / 2048));
+      font-size: 13px;
     }
 
     &-socials {

@@ -127,7 +127,7 @@ export default {
 .home-steps {
   padding: 150px 0px 180px;
   width: 100%;
-  background: url('@/assets/home/steps/steps_bg.png') repeat-x;
+  background: url('@/assets/home/steps/sunset.jpg') repeat-x;
   background-position: center auto;
   background-size: cover;
   @media (max-width: 800px) {
@@ -141,6 +141,9 @@ export default {
     padding: 0px 120px;
     /* margin-bottom: 40px;
     margin: 0; */
+    @media (max-width: 550px) {
+      padding: 0px 20px;
+    }
   }
 
   &-item {

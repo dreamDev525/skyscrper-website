@@ -13,7 +13,7 @@
             loop
             muted
           ></video>
-          <img v-else rel="preload" :src="videoOptions.mobileBg" alt="" />
+          <img v-else rel="preload" :src="videoOptions.mobileBg" :class="isBig ? '' : ''" alt="" />
         </div>
         <h2 class="home-video-banner__child">
           <WowsBtn class="whitelist-btn" buttonType="link" :url="links.whitelist"
@@ -108,7 +108,11 @@ export default {
       height: 100%;
 
       object-fit: cover;
+      @media (max-width: 1200px) {
+        margin-top: 80px;
+      }
     }
+
   }
 
   &__child {

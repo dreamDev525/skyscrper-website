@@ -16,7 +16,7 @@
       </div>
       <div class="faction-btn-wrapper">
         <div class="faction-btn-wrapper__divider"></div>
-        <WowsBtn class="faction-btn" buttonType="link" :url="links.whitelist"
+        <WowsBtn class="faction-btn" buttonType="link" url="#"
           >THE FACTIONS OF NYC</WowsBtn
         >
         <div class="faction-btn-wrapper__divider"></div>
@@ -309,11 +309,15 @@ export default {
     @media (max-width: 700px) {
       padding: 0px 50px;
     }
-
+    
+    @media (max-width: 550px) {
+      padding: 0px 0px;
+    }
     &-item {
       display: flex;
       justify-content: center;
       .teams-avatar {
+        min-width: 180px;
         max-width: 250px;
         width: 100%;
         position: relative;
@@ -350,7 +354,18 @@ export default {
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
-
+    .swiper-slide {
+      &:nth-child(2) {
+        .home-fraction__slider-item {
+          &-text {
+            width: 32%;
+            @media screen and (max-width: 1000px) {
+              width: 250px;
+            }
+          }
+        }
+      }
+    }
     &-item {
       width: 100%;
       margin-top: 15%;
@@ -365,33 +380,42 @@ export default {
       }
 
       &-character {
-        width: 50%;
-
+        width: 55%;
+        transform: translateY(20px);
         @media screen and (max-width: 1000px) {
           width: 100%;
           height: 400px;
           order: 2;
+          margin-top: 120px;
         }
 
         img {
+          min-height: 400px;
           width: 100%;
           height: 100%;
 
-          object-fit: contain;
+          object-fit: cover;
+          @media screen and (max-width: 1000px) {
+            max-width: 500px;
+          }
         }
       }
 
       &-text {
         width: 40%;
-
         margin-top: 8%;
 
         @media screen and (max-width: 1000px) {
-          width: 100%;
-          height: 150px;
+          
+          margin: 0 auto;
           /* margin-top: 50px; */
 
           order: 1;
+          position: absolute;
+          top: 15px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 300px;
         }
 
         img {

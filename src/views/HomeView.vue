@@ -104,8 +104,8 @@ iframe {
 
 // КНОПКИ СЛАЙДЕРА
 .slider-arrow {
-  height: 75px;
-  width: 75px;
+  height: 55px;
+  width: 55px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%) translateX(-20px) !important;

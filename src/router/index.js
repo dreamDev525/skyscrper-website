@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import MintLandEventView from "../views/MintLandEventView.vue";
-import MintlandView from "../views/MintlandView.vue";
+// import MintLandEventView from "../views/MintLandEventView.vue";
+// import MintlandView from "../views/MintlandView.vue";
 import PrivacyPolicyView from "../views/PrivacyPolicyView.vue";
 
 const routes = [
@@ -10,16 +10,16 @@ const routes = [
         name: "home",
         component: HomeView,
     },
-    {
-        path: '/mintlandevent',
-        name: 'mintlandevent',
-        component: MintLandEventView
-    },
-    {
-        path: '/mintland',
-        name: 'mintland',
-        component: MintlandView
-    },
+    // {
+    //     path: '/mintlandevent',
+    //     name: 'mintlandevent',
+    //     component: MintLandEventView
+    // },
+    // {
+    //     path: '/mintland',
+    //     name: 'mintland',
+    //     component: MintlandView
+    // },
     {
         path: "/privacy-policy",
         name: "privacypolicy",

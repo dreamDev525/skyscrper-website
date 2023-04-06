@@ -21,7 +21,7 @@
           buttonType="link"
           url="javascript:void(0);"
           target="_self">
-          THE FIRST'S DISTRICT FOR SALE
+          THE FIRST DISTRICTS FOR SALE
         </WowsBtn>
         <div class="faction-btn-wrapper__divider"></div>
       </div>
@@ -362,6 +362,10 @@ export default {
       padding: 0px 50px;
     }
 
+    @media (max-width: 550px) {
+      padding: 0px 0px;
+    }
+
     &-item {
       width: 100%;
 
@@ -371,6 +375,7 @@ export default {
       justify-content: center;
       cursor: pointer;
       .district-avatar {
+        min-width: 180px;
         max-width: 250px;
         width: 100%;
         position: relative;
