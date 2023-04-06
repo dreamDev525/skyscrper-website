@@ -5,7 +5,7 @@ export default createStore({
         links: {
             twitter: "https://twitter.com/Skyscraper_Game",
             discord: "https://discord.gg/skyscraper-xyz",
-            whitelist: "https://skyscraper.game/",
+            whitelist: "https://premint.xyz/skyscraper-empires-rise",
         },
     },
     getters: {

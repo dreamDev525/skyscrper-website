@@ -159,7 +159,8 @@ export default {
     margin-bottom: 30px;
 
     &-title {
-      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-family: acumin-pro-condensed;
+      font-style: italic;
       text-align: left;
       margin-bottom: 10px;
       display: flex;
@@ -168,7 +169,8 @@ export default {
 
       & > h5 {
         text-transform: uppercase;
-        font-size: 20px;
+        font-size: 22px;
+        font-weight: bold;
       }
 
       &[aria-expanded="true"] {

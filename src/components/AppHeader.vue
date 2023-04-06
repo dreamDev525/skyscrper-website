@@ -6,7 +6,7 @@
     <div class="wrapper-header">
       <div class="header__inner" v-if="big">
         <!-- SOCIALS -->
-        <div class="header__inner-socials">
+        <div class="header__inner-socials outlined">
           <div class="header__inner-volume">
             <!-- :class="{ off: !volumeOn }"
             @click="toggleVolume"
@@ -31,7 +31,7 @@
         <nav class="header__inner-nav">
           <ul class="nav__list left">
             <li class="nav__list-item">
-              <router-link to="/mintland">LAND DEEDS SALE</router-link>
+              <router-link to="/#">LAND DEEDS SALE(SOON)</router-link>
             </li>
             <li class="nav__list-item">
               <router-link to="/#steps" v-scroll-to="'#faq'"
@@ -39,7 +39,7 @@
               >
             </li>
             <li class="nav__list-item">
-              <router-link to="/#info" v-scroll-to="'#info'"
+              <router-link to="/#intro" v-scroll-to="'#intro'"
                 >a city in need</router-link
               >
             </li>
@@ -73,7 +73,7 @@
 
       <!-- МОБИЛЬНОЕ МЕНЮ -->
 
-      <div class="header__innermobile" v-else>
+      <div class="header__innermobile" :class="isTop ? '' : 'trans-head'" v-else>
         <div
           class="header__innermobile-wrapper"
           :style="{ background: show ? '#000' : 'transparent' }"
@@ -123,7 +123,7 @@
                 </div>
                 <ul class="header__innercontainer-nav-wrapper">
                   <li class="header__innercontainer-nav-item">
-                    <router-link to="/#info" v-scroll-to="'#info'"
+                    <router-link to="/#intro" v-scroll-to="'#intro'"
                       >a city in need</router-link
                     >
                   </li>
@@ -133,7 +133,7 @@
                     >
                   </li>
                   <li class="header__innercontainer-nav-item">
-                    <router-link to="/mintland">LAND DEEDS SALE</router-link>
+                    <router-link to="/#">LAND DEEDS SALE(SOON)</router-link>
                   </li>
                   <li class="header__innercontainer-nav-item">
                     <router-link to="/#steps" v-scroll-to="'#steps'"
@@ -167,7 +167,7 @@
             </div>
           </Transition>
         </div>
-        <div class="logo mobile-logo">
+        <div class="logo mobile-logo" v-if="isTop">
           <a href="/" class="logo-link">
             <img src="@/assets/logo.png" alt="" />
           </a>
@@ -193,6 +193,7 @@ export default {
       volumeOn: true,
       big: true,
       show: false,
+      isTop: true,
     };
   },
   computed: {
@@ -200,6 +201,7 @@ export default {
   },
   mounted() {
     window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.handleScroll);
     this.onResize();
 
     this.$refs.bgAudio.addEventListener(
@@ -216,6 +218,7 @@ export default {
   },
   unmounted() {
     window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.handleScroll);
   },
   watch: {
     '$route.fullPath'() {
@@ -248,6 +251,13 @@ export default {
       this.big = window.innerWidth >= 1200;
       this.show = false;
     },
+    handleScroll() {
+      if(window.scrollY > 130) {
+        this.isTop = false;
+      } else {
+        this.isTop = true;
+      }
+    }
   },
 };
 </script>
@@ -296,12 +306,37 @@ export default {
   }
 
   &__innermobile {
-    position: relative;
+    position: absolute;
+    top: 0;
+    background-color: #000000;
+    width: 100%;
     height: 80px;
 
     &-wrapper {
       position: relative;
       z-index: 10000;
+    }
+
+  }
+
+  .trans-head {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #000000;
+    animation: fadeInUp;
+    animation-duration: 1s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      top: -50px;
+    }
+    
+    to {
+      opacity: 1;
+      top: 0;
     }
   }
 
@@ -312,7 +347,7 @@ export default {
 
       /* cursor: pointer; */
 
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1200px) {
         display: flex;
         flex-shrink: 2;
         align-items: center;
@@ -343,10 +378,12 @@ export default {
     }
 
     &-socials {
-      position: absolute;
-      right: 20px;
+      &.outlined {
+        position: absolute;
+        right: 20px;
+      }
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: center;
       @media (max-width: 1200px) {
         margin-bottom: 20vh;
@@ -392,7 +429,7 @@ export default {
 
       & .nav__list-item {
         display: inline-block;
-        width: 150px;
+        margin: 0 20px;
 
         & > a {
           font-family: 'acumin-pro-condensed';
@@ -502,7 +539,8 @@ export default {
           text-transform: uppercase;
           font-size: calc(30px + 10 * ((100vw - 769px) / 2048));
           transition: color 0.3s;
-
+          font-family: 'acumin-pro-condensed';
+          font-style: italic;
           &:hover {
             color: #ed8f07;
           }

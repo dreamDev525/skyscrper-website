@@ -162,11 +162,14 @@ export default {
       margin-bottom: 10px;
       display: flex;
       justify-content: space-between;
+      font-family: acumin-pro-condensed;
+      font-style: italic;
       // align-items: center;
 
       & > h1 {
         text-transform: uppercase;
-        font-size: 20px;
+        font-size: 22px;
+        font-weight: bold;
       }
 
       &[aria-expanded="true"] {

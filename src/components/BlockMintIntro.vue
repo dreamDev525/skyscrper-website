@@ -1,6 +1,6 @@
 <template>
   <!-- INTRODUCING -->
-  <div class="home-intro">
+  <div class="home-intro" id="intro">
     <div class="home-intro__inner">
       <div class="wrapper wrapper__home-intro">
         <div class="slider-arrow left">

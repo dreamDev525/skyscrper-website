@@ -1,6 +1,6 @@
 <template>
   <!-- INTRODUCING -->
-  <div class="home-intro">
+  <div class="home-intro" id="intro">
     <div class="home-intro__inner">
       <div class="wrapper wrapper__home-intro">
         <div class="slider-arrow left">
@@ -170,6 +170,16 @@ export default {
   margin-top: 60px !important;
   max-width: 1200px !important;
   padding: 0px 100px;
+  
+  @media screen and (max-width: 550px) {
+    padding: 0px 20px;
+  } 
+  @media (max-width: 700px) {
+    padding: 0px 50px;
+  }
+  @media (max-width: 550px) {
+    padding: 0px 20px;
+  }
 }
 
 .home-intro {
